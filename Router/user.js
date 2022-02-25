@@ -1,6 +1,8 @@
 const router=require('express').Router();
 const USER=require('../models/user');
 const bcrypt = require("bcrypt");
+
+//Update user
 router.put('/user/update/:id',async(req,res)=>{
     const s1=req.body.userid+""
     const s2=req.params.id+""
@@ -25,13 +27,7 @@ router.put('/user/update/:id',async(req,res)=>{
         res.status(401).json("You can update only your account!");
       }
 })
-
-
-
-
-
-
-
+//Delete user
 router.delete('/user/delete/:id',async(req,res)=>{
     const s1=req.body.userid+""
     const s2=req.params.id+""
@@ -53,6 +49,8 @@ router.delete('/user/delete/:id',async(req,res)=>{
     }
     
 })
+
+//get user
 router.get('/user/get/:id',async(req,res)=>{
     console.log("paRAM",req.params.id)
     s1=req.params.id+""
