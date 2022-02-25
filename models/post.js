@@ -1,14 +1,16 @@
-
 const mongoose=require("mongoose")
 
-mongoose.Schema({
+const posts=mongoose.Schema({
     username:{
         type:String,
         required:true,
-        
+    },
+    photo:{
+        type:String,
+        required:false,
     },
     posttitle:{
-        type:string,
+        type:String,
         required:true,
     },
     postdesc:{
@@ -16,4 +18,8 @@ mongoose.Schema({
         required:true,
     }
 
-})
+},
+    { timestamps: true }
+)
+
+module.exports=mongoose.model("posts",posts)

@@ -1,7 +1,6 @@
 const router=require('express').Router();
 const USER=require('../models/user');
 const bcrypt = require("bcrypt");
-
 router.put('/user/update/:id',async(req,res)=>{
     const s1=req.body.userid+""
     const s2=req.params.id+""
@@ -26,6 +25,12 @@ router.put('/user/update/:id',async(req,res)=>{
         res.status(401).json("You can update only your account!");
       }
 })
+
+
+
+
+
+
 
 router.delete('/user/delete/:id',async(req,res)=>{
     const s1=req.body.userid+""
